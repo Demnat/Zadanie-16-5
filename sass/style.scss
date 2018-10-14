@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+%btn {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: #55ACEE; 
+    font: 16px Verdana, sans-serif;
+    color:  #fff;
+}
+
+.index {
+    margin: 0;
+    padding: 10px;
+    background-color: #55ACEE; 
+    text-align: center;
+    color: #fff;
+
+    &__main {
+        font-family: Verdana, sans-serif;
+        
+        &-box {
+            padding: 50px;
+        }
+
+        &-feature {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            &-btn {
+                @extend %btn;
+                
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            &-tweet {
+                @extend %btn; 
+                text-decoration: none;
+                
+                i {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+}
