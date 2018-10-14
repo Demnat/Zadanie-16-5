@@ -16,6 +16,10 @@
   color: #fff;
 }
 
+.index__main-feature-btn:disabled, .index__main-feature-tweet:disabled {
+  background-color: #9ac9ec;
+}
+
 .index {
   margin: 0;
   padding: 10px;

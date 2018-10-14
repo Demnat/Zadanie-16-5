@@ -1,10 +1,13 @@
 $(function() {
 
+    var button = $('.trigger');
     var tweetLink = "https://twitter.com/intent/tweet?text=";
     var prefix = "https://cors-anywhere.herokuapp.com/";
     var quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
 
     function getQuote() {
+        button.attr('disabled','disabled');
+        linkTweet.attr('disabled','disabled');
         $.getJSON(prefix + quoteUrl, createTweet);
         $.ajaxSetup({ cache: false });
     }
@@ -29,12 +32,14 @@ $(function() {
             $('.author').text("Author: " + quoteAuthor);
             $('.tweet').attr('href', tweet);
         }
+        
+        button.removeAttr('disabled');
 
     }
 
     $(document).ready(function() {
         getQuote();
-        $('.trigger').click(function() {
+        button.click(function() {
             getQuote();
         })
     });
