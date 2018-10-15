@@ -6,8 +6,7 @@ $(function() {
     var quoteUrl = "https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1";
 
     function getQuote() {
-        button.attr('disabled','disabled');
-        linkTweet.attr('disabled','disabled');
+        button.prop('disabled', true);
         $.getJSON(prefix + quoteUrl, createTweet);
         $.ajaxSetup({ cache: false });
     }
@@ -33,7 +32,7 @@ $(function() {
             $('.tweet').attr('href', tweet);
         }
         
-        button.removeAttr('disabled');
+        button.prop('disabled', false);
 
     }
 
